@@ -17,10 +17,8 @@ export default function Home() {
 
   // Initialize theme from system preference
   useEffect(() => {
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
+    const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (isDarkMode) {
       setIsDark(true);
     }
   }, []);
@@ -76,7 +74,7 @@ export default function Home() {
         {/* Left Content Area */}
         <div className="flex flex-col space-y-9 w-full lg:max-w-[750px] relative z-20 mt-16">
           <h1
-            className={`text-[86px] sm:text-[68px] lg:text-[88px] font-normal tracking-tight leading-[1.02] transition-colors duration-500 whitespace-nowrap ${isDark ? "text-[#94A3B8]" : "text-[#A5ADBB]"
+            className={`text-[56px] sm:text-[68px] lg:text-[88px] font-normal tracking-tight leading-[1.02] transition-colors duration-500 whitespace-nowrap ${isDark ? "text-[#94A3B8]" : "text-[#A5ADBB]"
               }`}
           >
             A single platform to <br />
